@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:type="TaskPaneApp">
+  <Id>5d890807-a67a-43c5-831b-fb6d90520212</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Antoine</ProviderName>
+  <DefaultLocale>fr-FR</DefaultLocale>
+  <DisplayName DefaultValue="Taskpanel Outlook" />
+  <Description DefaultValue="Complément pour afficher les foyers." />
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html" />
+  </DefaultSettings>
+  <Permissions>ReadWriteItem</Permissions>
+</OfficeApp>

@@ -20,15 +20,13 @@ module.exports = {
     ]
   },
   output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "dist")
+    filename: "taskpanel.js",
+    path: path.resolve(__dirname, "public")
   },
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: "public", to: "public" },
-        { from: "manifest.xml", to: "manifest.xml" },
-        { from: "dist/taskpanel.js", to: "public/taskpanel.js" }
+        { from: "manifest.xml", to: "manifest.xml" }
       ]
     })
   ]
