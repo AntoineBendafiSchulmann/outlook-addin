@@ -1,0 +1,31 @@
+{
+  "name": "outlook-addin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack --watch",
+    "start:outlook": "office-addin-debugging start manifest.xml",
+    "serve": "office-addin-debugging start manifest.xml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/mute-stream": "^0.0.4",
+    "@types/node-fetch": "^2.6.13",
+    "@types/office-js": "^1.0.555",
+    "@types/wrap-ansi": "^8.0.2",
+    "copy-webpack-plugin": "^13.0.1",
+    "npm": "^11.6.2",
+    "office-addin-debugging": "^6.0.5",
+    "office-addin-manifest": "^2.1.1",
+    "office-js": "^0.1.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
