@@ -27,7 +27,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: "public", to: "public" },
-        { from: "manifest.xml", to: "manifest.xml" }
+        { from: "manifest.xml", to: "manifest.xml" },
+        { from: "dist/taskpanel.js", to: "public/taskpanel.js" }
       ]
     })
   ]
