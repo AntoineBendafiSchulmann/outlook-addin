@@ -13,7 +13,7 @@
     <Host Name="Mailbox" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:3000/public/taskpanel" />
+    <SourceLocation DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html" />
   </DefaultSettings>
   <Permissions>ReadWriteItem</Permissions>
 </OfficeApp>
