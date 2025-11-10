@@ -6,14 +6,14 @@ body {
 h1 {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #0f030a;
+    color: #d51e64;
     margin-bottom: 1rem;
 }
 
 .foyer-button {
-    background-color: #d51e64;
-    color: white;
-    border: none;
+    background-color: #e5e5e5;
+    color: #000;
+    border: 1px solid #ccc;
     padding: 0.5rem;
     font-size: 1rem;
     margin-bottom: 0.5rem;
@@ -24,5 +24,6 @@ h1 {
 }
 
 .foyer-button:hover {
-    background-color: #d05383;
+    background-color: #d51e64;
+    color: #fff;
 }
