@@ -1,19 +1,18 @@
 const path = require("path");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: {
-    taskpanel: "./src/taskpanel.ts"
+    taskpanel: "./src/taskpanel.tsx"
   },
   devtool: "inline-source-map",
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".ts", ".tsx", ".js"]
   },
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/
       }
@@ -22,12 +21,5 @@ module.exports = {
   output: {
     filename: "taskpanel.js",
     path: path.resolve(__dirname, "public")
-  },
-  plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: "manifest.xml", to: "manifest.xml" }
-      ]
-    })
-  ]
+  }
 };

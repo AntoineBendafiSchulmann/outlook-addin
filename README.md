@@ -70,3 +70,21 @@ npm run start:outlook
 ```
 
 puis cliquer sur "OK" pour enregistrer le complément
+
+### Vider le cache d'Outlook
+
+Si les modifications ne sont pas prises en compte, vous pouvez vider le cache d'Outlook avec les commandes suivantes :
+
+1. accédez au dossier de cache :
+
+```bash
+cd $env:LOCALAPPDATA\Microsoft\Office\16.0\Wef
+```
+
+2. supprimez tout le contenu du dossier :
+
+```bash
+Remove-Item * -Recurse -Force
+```
+
+relancez Outlook après avoir vidé le cache pour voir les modifications

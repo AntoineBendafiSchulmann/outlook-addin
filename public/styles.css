@@ -1,0 +1,28 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0f030a;
+    margin-bottom: 1rem;
+}
+
+.foyer-button {
+    background-color: #d51e64;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.foyer-button:hover {
+    background-color: #d05383;
+}

@@ -3,6 +3,7 @@
     "target": "ES6",
     "lib": ["ES6", "DOM"],
     "module": "ESNext",
+    "jsx": "react-jsx",
     "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,
