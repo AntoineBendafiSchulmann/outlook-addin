@@ -1,23 +1,29 @@
 const foyers = ["Foyer 1", "Foyer 2", "Foyer 3", "Foyer 4"];
 
 export default function FoyerList() {
-  const handleClick = (nom: string) => {
-    Office.context.mailbox.displayNewAppointmentForm({
-      subject: `[Visite] ${nom}`,
-      start: new Date(),
-      end: new Date(Date.now() + 30 * 60 * 1000),
-      body: `Création de rendez-vous pour ${nom}`,
-      location: "À définir",
-      optionalAttendees: [],
-      requiredAttendees: [],
-      resources: []
-    });
+  const handleClick = async (nom: string) => {
+    try {
+      const item = Office.context.mailbox.item;
+      if (!item) {
+        console.error("L'objet 'item' est indisponible dans ce contexte.");
+        return;
+      }
+
+      await item.body.appendOnSendAsync(
+        `Création de rendez-vous pour ${nom}`,
+        { coercionType: Office.CoercionType.Text }
+      );
+      await item.location.setAsync("À définir");
+      await item.subject.setAsync(`[Visite] ${nom}`);
+    } catch (error) {
+      console.error("Erreur lors de l'ajout du foyer :", error);
+    }
   };
 
   return (
     <div>
       <h1>Foyers disponibles</h1>
-      {foyers.map(nom => (
+      {foyers.map((nom) => (
         <button
           key={nom}
           onClick={() => handleClick(nom)}
