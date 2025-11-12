@@ -1,8 +1,13 @@
-const foyers = ["Foyer 1", "Foyer 2", "Foyer 3", "Foyer 4"];
+import { useState } from "react";
+
+const foyers = ["Foyer 1", "Foyer 2", "Foyer 3", "Foyer 4", "Foyer 5", "Foyer 6", "Foyer 7"];
 
 export default function FoyerList() {
+  const [activeFoyer, setActiveFoyer] = useState<string | null>(null);
+
   const handleClick = async (nom: string) => {
     try {
+      setActiveFoyer(nom);
       const item = Office.context.mailbox.item;
       if (!item) {
         console.error("L'objet 'item' est indisponible dans ce contexte.");
@@ -27,7 +32,7 @@ export default function FoyerList() {
         <button
           key={nom}
           onClick={() => handleClick(nom)}
-          className="foyer-button"
+          className={`foyer-button ${activeFoyer === nom ? "active" : ""}`}
         >
           {nom}
         </button>

@@ -60,7 +60,7 @@ comme ceci :
 Serveur HTTPS local :
 
 ```bash
-npx http-server ./public -S -C "%USERPROFILE%\.office-addin-dev-certs\localhost.crt" -K "%USERPROFILE%\.office-addin-dev-certs\localhost.key" -p 3000
+npx http-server ./ -S -C "%USERPROFILE%\.office-addin-dev-certs\localhost.crt" -K "%USERPROFILE%\.office-addin-dev-certs\localhost.key" -p 3000
 ```
 
 Charger le complément dans outlook :

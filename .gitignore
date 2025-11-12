@@ -1,2 +1,9 @@
 node_modules/
 package-lock.json
+.env
+
+# build
+/dist
+
+# ide
+.DS_Store
