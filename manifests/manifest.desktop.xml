@@ -42,7 +42,33 @@
     xsi:type="VersionOverridesV1_0">
 
     <Hosts>
-      <Host xsi:type="MailHost"/>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="AppointmentComposeCommandSurface">
+            <OfficeTab id="TabAppointment">
+              <Group id="group1">
+                <Label resid="groupLabel"/>
+                <Control xsi:type="Button" id="openPaneButton">
+                  <Label resid="buttonLabel"/>
+                  <Supertip>
+                    <Title resid="buttonLabel"/>
+                    <Description resid="buttonDescription"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon1"/>
+                    <bt:Image size="32" resid="icon1"/>
+                    <bt:Image size="80" resid="icon1"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskpaneUrl"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+          <FunctionFile resid="taskpaneUrl"/>
+        </DesktopFormFactor>
+      </Host>
     </Hosts>
 
     <Resources>
