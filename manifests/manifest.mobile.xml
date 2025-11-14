@@ -3,7 +3,7 @@
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/mailappversionoverrides"
   xsi:type="MailApp">
 
   <Id>5d890807-a67a-43c5-831b-fb6d90520212</Id>
@@ -27,38 +27,81 @@
 
   <FormSettings>
     <Form xsi:type="ItemEdit">
-      <PhoneSettings>
+      <DesktopSettings>
         <SourceLocation DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html"/>
-      </PhoneSettings>
+      </DesktopSettings>
     </Form>
   </FormSettings>
 
+  <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
+  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+
   <Permissions>ReadWriteItem</Permissions>
 
-  <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
-
-  <VersionOverrides
-    xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
-    xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xsi:type="ov:VersionOverridesV1_1" xmlns="http://schemas.microsoft.com/office/mailappversionoverrides">
 
     <Hosts>
-      <Host xsi:type="MailHost"/>
+      <Host xsi:type="MailHost">
+
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+            <OfficeTab id="Tabc">
+              <Group id="foyerGroup">
+                <Label resid="groupLabel"/>
+                <Control xsi:type="Button" id="openPane">
+                  <Label resid="buttonLabel"/>
+                  <Icon>
+                    <bt:Image size="16" resid="icon1"/>
+                    <bt:Image size="32" resid="icon1"/>
+                    <bt:Image size="80" resid="icon1"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskpaneUrl"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+
+        <MobileFormFactor>
+        <FunctionFile resid="functionFileUrl"/>
+        <ExtensionPoint xsi:type="MobileLogEventAppointmentAttendee">
+            <Control xsi:type="MobileButton" id="logButtonMobile">
+            <Label resid="buttonLabel"/>
+            <Icon>
+                <bt:Image size="25" scale="1" resid="icon1"/>
+                <bt:Image size="25" scale="2" resid="icon1"/>
+                <bt:Image size="25" scale="3" resid="icon1"/>
+            </Icon>
+            <Action xsi:type="ExecuteFunction">
+                <FunctionName>logToFoyer</FunctionName>
+            </Action>
+            </Control>
+        </ExtensionPoint>
+        </MobileFormFactor>
+
+      </Host>
     </Hosts>
 
     <Resources>
       <bt:Images>
         <bt:Image id="icon1" DefaultValue="https://outlook-addin-tan.vercel.app/assets/icon1.png"/>
       </bt:Images>
+
       <bt:Urls>
         <bt:Url id="taskpaneUrl" DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html"/>
       </bt:Urls>
+
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Foyers"/>
         <bt:String id="buttonLabel" DefaultValue="Afficher les foyers"/>
       </bt:ShortStrings>
+
       <bt:LongStrings>
         <bt:String id="buttonDescription" DefaultValue="Associez un foyer au rendez-vous"/>
       </bt:LongStrings>
     </Resources>
+
   </VersionOverrides>
 </OfficeApp>
