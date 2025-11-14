@@ -2,7 +2,7 @@
 
 ## Description
 
-Ce projet est un complément Outlook permettant d'afficher une liste de foyers. Il utilise TypeScript, Webpack et les API Office.js
+Ce projet est un complément Outlook permettant d'afficher une liste de foyers activable depuis la fenêtre de saisie de rendez-vous. Il utilise TypeScript, Webpack et les API Office.js
 
 ## Installation
 
@@ -55,18 +55,35 @@ comme ceci :
    npm run build
    ```
 
+## Charger le complément dans outlook web :
+
+cliquez sur le bouton "Plus d'applications"dans le "ruban"
+![add_more_button](./public/assets/documentation/add_more_button.png)
+
+cliquez sur télécharger des compléments
+![download_complements](./public/assets/documentation/download_complements.png)
+
+Allez dans l'onglet "Mes compléments" puis ajouter dans "Ajouter un complément personnalisé" , sélectionnez l'ajout à partir d'un fichier
+![add_with_file](./public/assets/documentation/add_with_file.png)
+
+Selectionnez le .xml web
+![explorator](./public/assets/documentation/explorator.png)
+
+le complément est à présent chargé
+![result_downloaded_complement](./public/assets/documentation/result_downloaded_complement.png)
+
 ## Développement local
 
 Serveur HTTPS local :
 
 ```bash
-npx http-server ./ -S -C "%USERPROFILE%\.office-addin-dev-certs\localhost.crt" -K "%USERPROFILE%\.office-addin-dev-certs\localhost.key" -p 3000
+npm run serve
 ```
 
-Charger le complément dans outlook :
+Charger le complément dans outlook desktop :
 
 ```bash
-npm run start:outlook
+npm run start:outlook:desktop
 ```
 
 puis cliquer sur "OK" pour enregistrer le complément

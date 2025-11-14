@@ -10,7 +10,7 @@
     "start:outlook:web": "office-addin-debugging start manifests/manifest.web.xml",
     "start:outlook:desktop": "office-addin-debugging start manifests/manifest.desktop.xml",
     "start:outlook:mobile": "office-addin-debugging start manifests/manifest.mobile.xml",
-    "serve": " npx http-server ./ -S -C \"%USERPROFILE%\\.office-addin-dev-certs\\localhost.crt\" -K \"%USERPROFILE%\\.office-addin-dev-certs\\localhost.key\" -p 3000"
+    "serve": "npx http-server ./dist -S -C \"%USERPROFILE%\\.office-addin-dev-certs\\localhost.crt\" -K \"%USERPROFILE%\\.office-addin-dev-certs\\localhost.key\" -p 3000"
   },
   "keywords": [],
   "author": "",

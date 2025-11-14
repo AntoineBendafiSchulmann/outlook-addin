@@ -12,7 +12,7 @@
   <DefaultLocale>fr-FR</DefaultLocale>
   <DisplayName DefaultValue="Agenda partagé"/>
   <Description DefaultValue="Associez un foyer à votre rendez-vous"/>
-  <IconUrl DefaultValue="https://localhost:3000/dist/assets/icon1.png"/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon1.png"/>
   <SupportUrl DefaultValue="https://localhost:3000"/>
 
   <Hosts>
@@ -28,7 +28,7 @@
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/dist/taskpanel.html"/>
+        <SourceLocation DefaultValue="https://localhost:3000/taskpanel.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -47,10 +47,10 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="icon1" DefaultValue="https://localhost:3000/dist/assets/icon1.png"/>
+        <bt:Image id="icon1" DefaultValue="https://localhost:3000/assets/icon1.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="taskpaneUrl" DefaultValue="https://localhost:3000/dist/taskpanel.html"/>
+        <bt:Url id="taskpaneUrl" DefaultValue="https://localhost:3000/taskpanel.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Foyers"/>
