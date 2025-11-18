@@ -27,3 +27,9 @@ h1 {
     background-color: #d51e64;
     color: #fff;
 }
+
+.foyer-button.active {
+    background-color: #d51e64;
+    color: #fff;
+    border: 1px solid #d51e64;
+}
