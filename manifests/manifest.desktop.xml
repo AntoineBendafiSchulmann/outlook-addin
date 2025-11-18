@@ -45,9 +45,6 @@
     <Hosts>
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
-          <SupportedOfficeHosts>
-            <Host Name="Outlook"/>
-          </SupportedOfficeHosts>
           <ExtensionPoint xsi:type="AppointmentComposeCommandSurface">
             <OfficeTab id="TabAppointment">
               <Group id="GroupFoyers">
@@ -86,7 +83,7 @@
         <bt:String id="buttonLabel" DefaultValue="Afficher les foyers"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="buttonDescription" DefaultValue="Cliquez pour afficher les foyers"/>
+        <bt:String id="buttonDescription" DefaultValue="Associez un foyer au rendez-vous"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

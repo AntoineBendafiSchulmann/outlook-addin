@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
-import FoyerList from "./components/FoyerList";
+import FoyerListWeb from "./components/FoyerList.web";
+//import FoyerListDesktop from "./components/FoyerList.desktop";
 import ActivitiesList from "./components/ActivitiesList";
 
 Office.onReady(() => {
@@ -8,7 +9,8 @@ Office.onReady(() => {
     const root = ReactDOM.createRoot(container);
     root.render(
       <>
-        <FoyerList />
+        <FoyerListWeb />
+        {/* <FoyerListDesktop /> */}
         <ActivitiesList />
       </>
     );
