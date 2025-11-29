@@ -6,26 +6,33 @@ export default function FoyerList() {
   const [activeFoyer, setActiveFoyer] = useState<string | null>(null);
 
   const handleClick = async (nom: string) => {
-    try {
-      setActiveFoyer(nom);
-      const item = Office.context.mailbox.item;
-      if (!item) {
-        console.error("L'objet 'item' est indisponible dans ce contexte.");
-        return;
-      }
+    setActiveFoyer(nom);
+    const item = Office.context.mailbox.item;
 
-      await item.body.appendOnSendAsync(
-        `Création de rendez-vous pour ${nom}`,
-        { coercionType: Office.CoercionType.Text }
-      );
-      await item.location.setAsync("À définir");
-      await item.subject.setAsync(`[Visite] ${nom}`);
-    } catch (error) {
-      console.error("Erreur lors de l'ajout du foyer :", error);
+    if (item?.itemType === Office.MailboxEnums.ItemType.Appointment) {
+      try {
+        await item.body.setAsync(
+          `Création de rendez-vous pour ${nom}`,
+          { coercionType: Office.CoercionType.Text }
+        );
+        await item.location.setAsync("À définir");
+        await item.subject.setAsync(`[Visite] ${nom}`);
+      } catch (error) {
+        console.error("Erreur lors de la modification du rendez-vous :", error);
+      }
+    } else {
+      Office.context.mailbox.displayNewAppointmentForm({
+        subject: `[Visite] ${nom}`,
+        location: "À définir",
+        body: "",
+        start: new Date(),
+        end: new Date(Date.now() + 30 * 60 * 1000),
+        optionalAttendees: [],
+        requiredAttendees: [],
+        resources: []
+      });
     }
   };
-
-  console.log("Foyer actif :", activeFoyer);
 
   return (
     <div>
@@ -34,7 +41,7 @@ export default function FoyerList() {
         <button
           key={nom}
           onClick={() => handleClick(nom)}
-          className={`foyer-button ${activeFoyer === nom ? "active" : ""}`}
+          className={`foyer-button ${activeFoyer === nom ? " active" : ""}`}
         >
           {nom}
         </button>

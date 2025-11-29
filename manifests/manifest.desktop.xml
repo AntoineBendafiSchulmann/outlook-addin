@@ -67,6 +67,28 @@
               </Group>
             </OfficeTab>
           </ExtensionPoint>
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="GroupAccueil">
+                <Label resid="groupLabel"/>
+                <Control xsi:type="Button" id="BtnAccueil">
+                  <Label resid="buttonLabel"/>
+                  <Supertip>
+                    <Title resid="buttonLabel"/>
+                    <Description resid="buttonDescription"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon1"/>
+                    <bt:Image size="32" resid="icon1"/>
+                    <bt:Image size="80" resid="icon1"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskpaneUrl"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
     </Hosts>

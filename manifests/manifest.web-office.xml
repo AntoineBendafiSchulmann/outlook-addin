@@ -4,14 +4,14 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
            xsi:type="MailApp">
-  <Id>5d890807-a67a-43c5-831b-fb6d90520212</Id>
-  <Version>1.0.0.3</Version>
+  <Id>bb899576-f404-470c-841d-157f964bb0c5</Id>
+  <Version>1.0.0.0</Version>
   <ProviderName>Antoine Bendafi</ProviderName>
   <DefaultLocale>fr-FR</DefaultLocale>
   <DisplayName DefaultValue="Agenda partagé"/>
   <Description DefaultValue="Associez un foyer à votre rendez-vous"/>
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon1.png"/>
-  <SupportUrl DefaultValue="https://localhost:3000"/>
+  <IconUrl DefaultValue="https://outlook-addin-tan.vercel.app/assets/icon1.png"/>
+  <SupportUrl DefaultValue="https://outlook-addin-tan.vercel.app"/>
 
   <Hosts>
     <Host Name="Mailbox"/>
@@ -23,15 +23,6 @@
     </Sets>
   </Requirements>
 
-  <FormSettings>
-    <Form xsi:type="ItemRead">
-      <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/taskpanel.html"/>
-        <RequestedHeight>250</RequestedHeight>
-      </DesktopSettings>
-    </Form>
-  </FormSettings>
-
   <Permissions>ReadWriteItem</Permissions>
 
   <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
@@ -41,7 +32,6 @@
     <Hosts>
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
-          <SupportsPinning>true</SupportsPinning>
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
             <OfficeTab id="TabMessage">
               <Group id="GroupFoyers">
@@ -70,10 +60,10 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="icon1" DefaultValue="https://localhost:3000/assets/icon1.png"/>
+        <bt:Image id="icon1" DefaultValue="https://outlook-addin-tan.vercel.app/assets/icon1.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="taskpaneUrl" DefaultValue="https://localhost:3000/taskpanel.html"/>
+        <bt:Url id="taskpaneUrl" DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Foyers"/>
