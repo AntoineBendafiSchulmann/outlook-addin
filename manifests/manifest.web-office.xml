@@ -70,10 +70,10 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="icon1" DefaultValue="https://localhost:3000/assets/icon1.png"/>
+        <bt:Image id="icon1" DefaultValue="https://outlook-addin-tan.vercel.app/assets/icon1.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="taskpaneUrl" DefaultValue="https://localhost:3000/taskpanel.html"/>
+        <bt:Url id="taskpaneUrl" DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Foyers"/>
