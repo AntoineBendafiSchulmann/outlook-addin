@@ -5,13 +5,13 @@
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
            xsi:type="MailApp">
   <Id>5d890807-a67a-43c5-831b-fb6d90520212</Id>
-  <Version>1.0.0.3</Version>
+  <Version>1.0.0.2</Version>
   <ProviderName>Antoine Bendafi</ProviderName>
   <DefaultLocale>fr-FR</DefaultLocale>
   <DisplayName DefaultValue="Agenda partagé"/>
   <Description DefaultValue="Associez un foyer à votre rendez-vous"/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon1.png"/>
-  <SupportUrl DefaultValue="https://localhost:3000"/>
+  <SupportUrl DefaultValue="https://localhost:3000/"/>
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
