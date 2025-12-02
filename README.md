@@ -55,7 +55,24 @@ comme ceci :
    npm run build
    ```
 
-## Charger le complément dans outlook web :
+## Charger et déployer le complément à une ou plusieurs personnes dans outlook web https://outlook.office.com/ (version intégrée dans l'abonnement à la suite Microsoft 365)
+
+Dans les Paramètres allez dans l'onglet "Integrated apps"
+![settings_integrated_apps](./public/assets/documentation/settings-integrated-apps.png)
+
+cliquez sur "Upload custom apps", puis séléctionnez "Office Add-in" , déposez le fichier xml
+![upload_custom-apps](./public/assets/documentation/choose_xml_office_suite_dl.png)
+
+Déployer le à vous même , à votre organisation , ou à des utilisateurs spécifiques
+![choose_final_user_for_deployment](./public/assets/documentation/choose_final_user_for_deployment.png)
+
+veillez à ce que le host product soit outlook , le complément est à présent créé
+![m_office_addin_added](./public/assets/documentation/m_office_addin_added.png)
+
+le complément sera déployé dans outlook au bout d'un certain délai
+![waiting_for_deployment_in_outlook](./public/assets/documentation/waiting_for_deployment_in_outlook.png)
+
+## Charger le complément dans outlook web https://outlook.live.com/ (version indépendante et gratuite)
 
 cliquez sur le bouton "Plus d'applications"dans le "ruban"
 ![add_more_button](./public/assets/documentation/add_more_button.png)
