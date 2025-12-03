@@ -7,7 +7,7 @@
            SupportsMobilePlatform="true">
 
   <Id>5b3e1a8f-6a09-40fc-a568-a55bab16b71es</Id>
-  <Version>1.0.0.1</Version>
+  <Version>1.0.0.2</Version>
   <ProviderName>Antoine Bendafi</ProviderName>
   <DefaultLocale>fr-FR</DefaultLocale>
   <DisplayName DefaultValue="Agenda mobile"/>
@@ -44,14 +44,40 @@
 
   <Permissions>ReadItem</Permissions>
 
-  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" MessageClass="IPM.Note"/>
+  <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" MessageClass="IPM.Appointment"/>
 
-  <VersionOverrides
-    xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
-    xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
+                    xsi:type="VersionOverridesV1_0">
 
     <Hosts>
       <Host xsi:type="MailHost">
+
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="GroupDesktopStub">
+                <Label resid="groupLabel"/>
+                <Control xsi:type="Button" id="BtnStubDesktop">
+                  <Label resid="buttonLabel"/>
+                  <Supertip>
+                    <Title resid="buttonLabel"/>
+                    <Description resid="buttonDescription"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon1"/>
+                    <bt:Image size="32" resid="icon1"/>
+                    <bt:Image size="80" resid="icon1"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskpaneUrl"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+
         <MobileFormFactor>
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
             <OfficeTab id="TabDefault">
@@ -76,6 +102,7 @@
             </OfficeTab>
           </ExtensionPoint>
         </MobileFormFactor>
+
       </Host>
     </Hosts>
 
@@ -94,5 +121,6 @@
         <bt:String id="buttonDescription" DefaultValue="Consultez les foyers depuis votre mobile"/>
       </bt:LongStrings>
     </Resources>
+
   </VersionOverrides>
 </OfficeApp>

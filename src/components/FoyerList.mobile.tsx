@@ -15,7 +15,7 @@ export default function FoyerListMobile() {
 
   const handleClick = (nom: string) => {
     setSelected(nom);
-    alert("Lecture seule sur mobile.");
+    setIsReadonly(true);
   };
 
   return (
