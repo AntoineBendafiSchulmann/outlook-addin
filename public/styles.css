@@ -33,3 +33,9 @@ h1 {
     color: #fff;
     border: 1px solid #d51e64;
 }
+
+.readonly-info {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #666;
+}
