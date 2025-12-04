@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
-           xsi:type="MailApp"
-           SupportsMobilePlatform="true">
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+  xsi:type="MailApp"
+  SupportsMobilePlatform="true">
 
-  <Id>5b3e1a8f-6a09-40fc-a568-a55bab16b71es</Id>
-  <Version>1.0.0.2</Version>
+  <Id>4f14a39f-3137-4ef0-8d01-566952664802</Id>
+  <Version>1.0.1.0</Version>
   <ProviderName>Antoine Bendafi</ProviderName>
   <DefaultLocale>fr-FR</DefaultLocale>
+
   <DisplayName DefaultValue="Agenda mobile"/>
-  <Description DefaultValue="Consultez les foyers disponibles depuis mobile"/>
+  <Description DefaultValue="Consultation des foyers (lecture seule)"/>
+
   <IconUrl DefaultValue="https://outlook-addin-tan.vercel.app/assets/icon1.png"/>
   <SupportUrl DefaultValue="https://outlook-addin-tan.vercel.app"/>
 
@@ -27,14 +30,6 @@
 
   <FormSettings>
     <Form xsi:type="ItemRead">
-      <DesktopSettings>
-        <SourceLocation DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html"/>
-        <RequestedHeight>250</RequestedHeight>
-      </DesktopSettings>
-      <TabletSettings>
-        <SourceLocation DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html"/>
-        <RequestedHeight>250</RequestedHeight>
-      </TabletSettings>
       <PhoneSettings>
         <SourceLocation DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html"/>
         <RequestedHeight>250</RequestedHeight>
@@ -42,10 +37,10 @@
     </Form>
   </FormSettings>
 
+
   <Permissions>ReadItem</Permissions>
 
-  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" MessageClass="IPM.Note"/>
-  <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" MessageClass="IPM.Appointment"/>
+  <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
 
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
                     xsi:type="VersionOverridesV1_0">
@@ -53,74 +48,56 @@
     <Hosts>
       <Host xsi:type="MailHost">
 
-        <DesktopFormFactor>
-          <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="GroupDesktopStub">
-                <Label resid="groupLabel"/>
-                <Control xsi:type="Button" id="BtnStubDesktop">
-                  <Label resid="buttonLabel"/>
-                  <Supertip>
-                    <Title resid="buttonLabel"/>
-                    <Description resid="buttonDescription"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1"/>
-                    <bt:Image size="32" resid="icon1"/>
-                    <bt:Image size="80" resid="icon1"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="taskpaneUrl"/>
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-        </DesktopFormFactor>
-
         <MobileFormFactor>
-          <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="GroupMobileFoyers">
-                <Label resid="groupLabel"/>
-                <Control xsi:type="Button" id="BtnOpenMobileAgenda">
-                  <Label resid="buttonLabel"/>
-                  <Supertip>
-                    <Title resid="buttonLabel"/>
-                    <Description resid="buttonDescription"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="icon1"/>
-                    <bt:Image size="32" resid="icon1"/>
-                    <bt:Image size="80" resid="icon1"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="taskpaneUrl"/>
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
+
+          <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+            <Group id="MobileGroup">
+              <Label resid="groupLabel"/>
+              <Control xsi:type="Button" id="BtnMobileFoyer">
+                <Label resid="buttonLabel"/>
+                <Supertip>
+                  <Title resid="buttonLabel"/>
+                  <Description resid="buttonDescription"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="icon1"/>
+                  <bt:Image size="32" resid="icon1"/>
+                </Icon>
+                <Action xsi:type="ShowTaskpane">
+                  <SourceLocation resid="taskpaneUrl"/>
+                </Action>
+              </Control>
+            </Group>
           </ExtensionPoint>
+
         </MobileFormFactor>
 
       </Host>
     </Hosts>
 
     <Resources>
+
       <bt:Images>
         <bt:Image id="icon1" DefaultValue="https://outlook-addin-tan.vercel.app/assets/icon1.png"/>
       </bt:Images>
+
       <bt:Urls>
-        <bt:Url id="taskpaneUrl" DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html"/>
+        <bt:Url id="taskpaneUrl"
+                DefaultValue="https://outlook-addin-tan.vercel.app/taskpanel.html"/>
       </bt:Urls>
+
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Foyers"/>
-        <bt:String id="buttonLabel" DefaultValue="Agenda mobile"/>
+        <bt:String id="buttonLabel" DefaultValue="Ouvrir foyer"/>
       </bt:ShortStrings>
+
       <bt:LongStrings>
-        <bt:String id="buttonDescription" DefaultValue="Consultez les foyers depuis votre mobile"/>
+        <bt:String id="buttonDescription"
+                   DefaultValue="Afficher les foyers"/>
       </bt:LongStrings>
+
     </Resources>
 
   </VersionOverrides>
+
 </OfficeApp>
