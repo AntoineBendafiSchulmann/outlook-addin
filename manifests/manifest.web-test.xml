@@ -4,11 +4,11 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
            xsi:type="MailApp">
-  <Id>5d890807-a67a-43c5-831b-fb6d90520212</Id>
+  <Id>ac86f197-9539-4473-a2db-564e58d83cd1</Id>
   <Version>1.0.0.1</Version>
   <ProviderName>Antoine Bendafi</ProviderName>
   <DefaultLocale>fr-FR</DefaultLocale>
-  <DisplayName DefaultValue="Agenda partagé"/>
+  <DisplayName DefaultValue="Agenda localhost"/>
   <Description DefaultValue="Associez un foyer à votre rendez-vous"/>
   <IconUrl DefaultValue="https://localhost:3000/assets/icon1.png"/>
   <SupportUrl DefaultValue="https://localhost:3000/"/>
