@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom/client";
 import FoyerListWeb from "./components/FoyerList.web";
 //import FoyerListMobile from "./components/FoyerList.mobile";
-//import FoyerListDesktop from "./components/FoyerList.desktop";
 import ActivitiesList from "./components/ActivitiesList";
 
 Office.onReady(() => {
@@ -11,7 +10,6 @@ Office.onReady(() => {
     root.render(
       <>
         <FoyerListWeb />
-        {/* <FoyerListDesktop /> */}
         {/*<FoyerListMobile /> */}
         <ActivitiesList />
       </>

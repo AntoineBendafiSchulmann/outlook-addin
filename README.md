@@ -13,7 +13,7 @@ Ce projet est un complément Outlook permettant d'afficher une liste de foyers a
 - outlook installé
 - certificats de développement pour `.office-addin-dev-certs`
 
-### Installation des certificats
+### Installation des certificats pour exécuter le complément en local
 
 exécutez la commande suivante dans votre terminal :
 
@@ -37,13 +37,13 @@ comme ceci :
 1. Clonez le dépôt :
 
    ```bash
-   git clone https://github.com/AntoineBendafiSchulmann/outlook-addin
+
    ```
 
    puis
 
    ```bash
-    cd outlook-addin
+
    ```
 
 2. Installez les dépendances :
@@ -96,14 +96,6 @@ Serveur HTTPS local :
 ```bash
 npm run serve
 ```
-
-Charger le complément dans outlook desktop :
-
-```bash
-npm run start:outlook:desktop
-```
-
-puis cliquer sur "OK" pour enregistrer le complément
 
 ### Vider le cache d'Outlook
 
