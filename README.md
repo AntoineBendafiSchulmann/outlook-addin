@@ -2,7 +2,7 @@
 
 ## Description
 
-Ce projet est un complément Outlook permettant d'afficher une liste de foyers activable depuis la fenêtre de saisie de rendez-vous. Il utilise TypeScript, Webpack et les API Office.js
+Ce projet est un complément Outlook permettant d'afficher un raccourci sur la page d'accueil pour injecter des données dans la création de rendez-vous. Il utilise TypeScript, Webpack et l'API Office.js
 
 ## Installation
 
@@ -35,6 +35,16 @@ comme ceci :
 ### Étapes
 
 1. Clonez le dépôt :
+
+   ```bash
+   git clone https://github.com/AntoineBendafiSchulmann/outlook-addin
+   ```
+
+   puis
+
+   ```bash
+    cd outlook-addin
+   ```
 
 2. Installez les dépendances :
    ```bash
