@@ -36,16 +36,6 @@ comme ceci :
 
 1. Clonez le dépôt :
 
-   ```bash
-
-   ```
-
-   puis
-
-   ```bash
-
-   ```
-
 2. Installez les dépendances :
    ```bash
    npm install
