@@ -24,8 +24,9 @@ h1 {
 }
 
 .foyer-button:hover {
-    background-color: #e9becf;
+    background-color: #ffffff;
     color: #d51e64;
+    border: #d51e64 1px solid;
 }
 
 .foyer-button.active {
@@ -171,4 +172,80 @@ input[type="checkbox"] {
 
 .switch input:checked+.slider::before {
     transform: translateX(20px);
+}
+
+.feedback-widget {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background-color: #d51e64;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    width: auto;
+    max-width: 320px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.feedback-toggle-button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+}
+
+.feedback-toggle-button:hover {
+    background-color: #b71854;
+}
+
+.feedback-icon {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.feedback-label {
+    line-height: 1;
+    font-size: 1rem;
+}
+
+.feedback-content {
+    padding: 0 1.25rem 1rem;
+    font-size: 0.9rem;
+    color: white;
+    display: none;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.feedback-widget.open .feedback-content {
+    display: block;
+}
+
+.feedback-content .qr {
+    width: 120px;
+    height: 120px;
+    margin: 0.75rem 0;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
