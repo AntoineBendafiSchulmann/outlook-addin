@@ -10,7 +10,7 @@
   <DefaultLocale>fr-FR</DefaultLocale>
   <DisplayName DefaultValue="Agenda localhost"/>
   <Description DefaultValue="Associez un foyer à votre rendez-vous"/>
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon1.png"/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon2.png"/>
   <SupportUrl DefaultValue="https://localhost:3000/"/>
   <Hosts>
     <Host Name="Mailbox"/>
@@ -53,9 +53,9 @@
                     <Description resid="buttonDescription"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="icon1"/>
-                    <bt:Image size="32" resid="icon1"/>
-                    <bt:Image size="80" resid="icon1"/>
+                    <bt:Image size="16" resid="icon2"/>
+                    <bt:Image size="32" resid="icon2"/>
+                    <bt:Image size="80" resid="icon2"/>
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <SourceLocation resid="taskpaneUrl"/>
@@ -70,7 +70,7 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="icon1" DefaultValue="https://localhost:3000/assets/icon1.png"/>
+        <bt:Image id="icon2" DefaultValue="https://localhost:3000/assets/icon2.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="taskpaneUrl" DefaultValue="https://localhost:3000/taskpanel.html"/>

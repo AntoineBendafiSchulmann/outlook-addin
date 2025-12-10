@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 import foyersService from "../services/foyersService.mock";
 import { Foyer } from "../types/types";
+import SearchBar from "./SearchBar";
 
-export default function FoyerList() {
+export default function FoyerListWeb() {
   const [foyers, setFoyers] = useState<Foyer[]>([]);
+  const [filteredFoyers, setFilteredFoyers] = useState<Foyer[]>([]);
   const [activeFoyer, setActiveFoyer] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await foyersService.getFoyers();
         setFoyers(data);
+        setFilteredFoyers(data);
       } catch (error) {
         console.error("impossible de charger les foyers :", error);
       }
@@ -18,6 +22,12 @@ export default function FoyerList() {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const lower = search.toLowerCase();
+    const results = foyers.filter((f) => f.nom.toLowerCase().includes(lower));
+    setFilteredFoyers(results);
+  }, [search, foyers]);
 
   const handleClick = async (foyer: Foyer) => {
     setActiveFoyer(foyer.id);
@@ -57,7 +67,8 @@ export default function FoyerList() {
   return (
     <div>
       <h1>Foyers disponibles</h1>
-      {foyers.map((foyer) => (
+      <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} />
+      {filteredFoyers.map((foyer) => (
         <button
           key={foyer.id}
           onClick={() => handleClick(foyer)}

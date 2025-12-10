@@ -43,7 +43,8 @@ module.exports = {
       patterns: [
         { from: "./public/index.html", to: "index.html", noErrorOnMissing: true },
         { from: "./public/styles.css", to: "styles.css", noErrorOnMissing: true },
-        { from: "./public/assets/icon1.png", to: "assets/icon1.png", noErrorOnMissing: true }
+        { from: "./public/assets/icon1.png", to: "assets/icon1.png", noErrorOnMissing: true },
+        { from: "./public/assets/icon2.png", to: "assets/icon2.png", noErrorOnMissing: true }
       ]
     }),
 
