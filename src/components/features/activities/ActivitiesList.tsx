@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import activitiesService from "../services/activitiesService";
-import { Activity } from "../types/types";
+import activitiesService from "../../../services/activitiesService";
+import { Activity } from "../../../types/types";
 
 export default function ActivitiesList() {
   const [activities, setActivities] = useState<Activity[]>([]);

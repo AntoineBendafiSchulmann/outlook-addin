@@ -1,9 +1,9 @@
 import { useState } from "react";
-import FoyerListWeb from "./FoyerList.web";
-import ActivitiesList from "./ActivitiesList";
-import PageSwitcher from "./PageSwitcher";
+import FoyerListWeb from "../features/foyers/FoyerList.web";
+import ActivitiesList from "../features/activities/ActivitiesList";
+import PageSwitcher from "../ui/PageSwitcher";
 import SettingsPage from "./SettingsPage";
-import FeedbackWidget from "./FeedbackWidget";
+import FeedbackWidget from "../ui/FeedbackWidget";
 
 export default function MainPanel() {
   const [page, setPage] = useState<"foyers" | "activites" | "parametres">("foyers");

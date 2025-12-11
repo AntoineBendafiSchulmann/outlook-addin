@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import MainPanel  from "./components/MainPanel";
+import MainPanel  from "./components/layout/MainPanel";
 
 Office.onReady(() => {
   const container = document.getElementById("foyer-list");

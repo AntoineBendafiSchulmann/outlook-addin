@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import foyersService from "../services/foyersService.mock";
-import { Foyer } from "../types/types";
-import SearchBar from "./SearchBar";
+import foyersService from "../../../services/foyersService.mock";
+import { Foyer } from "../../../types/types";
+import SearchBar from "../../ui/SearchBar";
 
 export default function FoyerListWeb() {
   const [foyers, setFoyers] = useState<Foyer[]>([]);

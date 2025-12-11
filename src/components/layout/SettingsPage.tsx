@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Card from "./Card";
-import Toggle from "./Toggle";
+import Card from "../ui/Card";
+import Toggle from "../ui/Toggle";
 
 export default function SettingsPage() {
   const [autoSubject, setAutoSubject] = useState(true);
